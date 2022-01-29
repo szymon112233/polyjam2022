@@ -5,7 +5,7 @@ public class InteractiveNode : BasicNode
 {
 	public List<BasicAction> Actions;
 	
-	public void Fire(Vector2 direction)
+	public void Fire(Vector3 direction)
 	{
 		if (Actions.Count == 0)
 		{

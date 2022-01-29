@@ -9,10 +9,8 @@ public class SendLineAction : BasicAction
 	[SerializeField]
 	private GameObject RayPrefab;
 
-	public override void DoAction(BasicNode invokingNode, Vector2 direction)
+	public override void DoAction(BasicNode invokingNode, Vector3 direction)
 	{
-		
-
-		//Instantiate(RayPrefab, invokingNode.transform.position, Quaternion.to)
+		Instantiate(RayPrefab, invokingNode.transform.position, Quaternion.Euler(direction - invokingNode.transform.position));
 	}
 }
