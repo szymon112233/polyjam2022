@@ -48,6 +48,11 @@ public class ProgressionManager : MonoBehaviour
 		if (CurrentlyPlayedLevel != null)
 		{
 			Destroy(CurrentlyPlayedLevel);
+			var waveObjectsLeft = GameObject.FindGameObjectsWithTag("Wave");
+			foreach (var wave in waveObjectsLeft)
+			{
+				Destroy(wave);
+			}
 		}
 
 		var levelToLoad = LevelsLeftToPlay[0];
