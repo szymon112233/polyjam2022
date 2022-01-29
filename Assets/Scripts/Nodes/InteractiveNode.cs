@@ -13,7 +13,7 @@ public class InteractiveNode : BasicNode
 	private void Awake()
 	{
 		
-		Vector3 angle = transform.InverseTransformDirection(transform.up) * range;
+		Vector3 angle = -transform.up * range;
 		
 		OnActivated.AddListener(()=> Fire(angle)); 
 	}
