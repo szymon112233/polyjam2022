@@ -295,9 +295,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Actions:
-  - {fileID: 11400000, guid: 30034355456580d48a3372996e6d3f64, type: 2}
+  - {fileID: 11400000, guid: 457bec5632e986b48b00fb05ec3c5095, type: 2}
   range: 0
-  DeleteUsedActions: 0
+  DeleteUsedActions: 1
   ShootInputFinished: {fileID: 11400000, guid: 2dac5e3e54722b64d84533c511f02c97, type: 2}
   DuringShootInput: {fileID: 11400000, guid: 5069670c3f10c0746934629d2b0cde3b, type: 2}
   LineRenderer: {fileID: 8062207526081484773}
