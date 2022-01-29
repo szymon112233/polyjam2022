@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 3199313798552643175}
   - component: {fileID: 4126108003187333324}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: IdleSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7828b4cd3caf0b468375711dfa27c4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -226,10 +226,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FrameSprites:
-  - {fileID: 21300000, guid: 525024feac4ecdc45a0d999f9c81e356, type: 3}
-  - {fileID: 21300000, guid: e803fe7f4d0795c4dba4a4ee6a87493c, type: 3}
+  - {fileID: 21300000, guid: d7828b4cd3caf0b468375711dfa27c4a, type: 3}
+  - {fileID: 21300000, guid: c8b6dc8cdf3a5354a9dcce99212dda9f, type: 3}
+  - {fileID: 21300000, guid: e56361cb6b0a183468becf1e3408f2b9, type: 3}
+  - {fileID: 21300000, guid: 7ed7cb568a53a7f40bc5436415cf6aff, type: 3}
   FrameTime: 0.1
-  renderer: {fileID: 8062207526625380624}
 --- !u!114 &4126108003187333324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9801fabd8c48e3beccd5c0dd7d65ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShouldBeInvert: 0
 --- !u!1 &8062207526853601609
 GameObject:
   m_ObjectHideFlags: 0
