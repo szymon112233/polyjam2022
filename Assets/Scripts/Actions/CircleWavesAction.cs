@@ -5,17 +5,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CircleWavesAction", menuName = "CircleWavesAction", order = 0)]
 public class CircleWavesAction : BasicAction
 {
-
 	[SerializeField]
 	private GameObject CirclePrefab;
-	
-	
+	[SerializeField]
+	private GameObjectEvent LightObjectCreated;
+	[SerializeField]
+	private GameObjectEvent LightObjectDestroyed;
+
+
 	public override void DoAction(BasicNode invokingNode, Vector3 direction)
 	{
 		float currentRange = Mathf.Clamp(direction.magnitude, 0.0f, Range);
 
 		var rayObject = Instantiate(CirclePrefab, invokingNode.transform.position, Quaternion.identity);
 		invokingNode.StartCoroutine(MovementCoroutine(rayObject, currentRange));
+
+		LightObjectCreated.Action?.Invoke(rayObject);
 	}
 
 	private IEnumerator MovementCoroutine(GameObject movingObject, float maxRadius)
@@ -35,6 +40,7 @@ public class CircleWavesAction : BasicAction
 			yield return null;
 		}
 
+		LightObjectDestroyed.Action?.Invoke(movingObject);
 		Destroy(movingObject);
 	}
 }

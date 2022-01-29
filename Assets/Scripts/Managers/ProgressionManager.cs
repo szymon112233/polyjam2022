@@ -28,6 +28,7 @@ public class ProgressionManager : MonoBehaviour
 
 	private List<GameObject> LevelsLeftToPlay;
 	private GameObject CurrentlyPlayedLevel;
+	private GameObject CurrentLevelPrefab;
 	private List<ControllableNode> ControllableNodesInCurrentLevel;
 	private List<GameObject> CurrentLightObjects = new List<GameObject>();
 
@@ -62,15 +63,32 @@ public class ProgressionManager : MonoBehaviour
 			DestroyImmediate(CurrentlyPlayedLevel);
 		}
 
-		var levelToLoad = LevelsLeftToPlay[0];
+		CurrentLevelPrefab = LevelsLeftToPlay[0];
 		LevelsLeftToPlay.RemoveAt(0);
-		CurrentlyPlayedLevel = Instantiate(levelToLoad);
+		CurrentlyPlayedLevel = Instantiate(CurrentLevelPrefab);
 
+		PrepareToStartLevel();
+	}
+
+	private void RestartCurrentLevel()
+	{
+		if (CurrentlyPlayedLevel != null)
+		{
+			DestroyImmediate(CurrentlyPlayedLevel);
+		}
+
+		CurrentlyPlayedLevel = Instantiate(CurrentLevelPrefab);
+		PrepareToStartLevel();
+	}
+
+	private void PrepareToStartLevel()
+	{
 		NumberOfCurrentlyActivatedNodes = 0;
 		TotalNumberOfNodes = FindObjectsOfType<BasicNode>().Count(node => !(node is ControllableNode) && !node.Activated);
 		ControllableNodesInCurrentLevel = FindObjectsOfType<ControllableNode>().ToList();
 
 		VictoryScreen.SetActive(false);
+		FailureScreen.SetActive(false);
 		UpdateGUI();
 	}
 
@@ -96,6 +114,11 @@ public class ProgressionManager : MonoBehaviour
 		LoadNewLevel();
 	}
 
+	public void RestartLevelButtonBehaviour()
+	{
+		RestartCurrentLevel();
+	}
+
 	public void LoadMainMenu()
 	{
 		SceneManager.LoadScene("MainMenu");
@@ -110,7 +133,7 @@ public class ProgressionManager : MonoBehaviour
 	{
 		CurrentLightObjects.Remove(lightObject);
 
-		if (CurrentLightObjects.Count == 0 && ControllableNodesInCurrentLevel.All(node => !node.HasAnyActionsLeft()))
+		if (!VictoryScreen.activeInHierarchy && CurrentLightObjects.Count == 0 && ControllableNodesInCurrentLevel.All(node => !node.HasAnyActionsLeft()))
 		{
 			FailureScreen.SetActive(true);
 		}
