@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimatorBetter : MonoBehaviour
@@ -8,7 +7,7 @@ public class AnimatorBetter : MonoBehaviour
 	public List<Sprite> FrameSprites = new List<Sprite>();
 	public float FrameTime;
 
-	public SpriteRenderer renderer;
+	private SpriteRenderer SpriteRenderer;
 
 	private int frameIndex;
 	private float timer;
@@ -18,7 +17,8 @@ public class AnimatorBetter : MonoBehaviour
 	{
 		frameIndex = 0;
 		timer = 0;
-		renderer.sprite = FrameSprites[frameIndex];
+		SpriteRenderer = GetComponent<SpriteRenderer>();
+		SpriteRenderer.sprite = FrameSprites[frameIndex];
 
 	}
 
@@ -34,7 +34,7 @@ public class AnimatorBetter : MonoBehaviour
 				frameIndex = 0;
 			}
 			timer = 0;
-			renderer.sprite = FrameSprites[frameIndex];
+			SpriteRenderer.sprite = FrameSprites[frameIndex];
 		}
 	}
 }
