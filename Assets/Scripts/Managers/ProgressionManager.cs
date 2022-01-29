@@ -55,7 +55,7 @@ public class ProgressionManager : MonoBehaviour
 		CurrentlyPlayedLevel = Instantiate(levelToLoad);
 
 		NumberOfCurrentlyActivatedNodes = 0;
-		TotalNumberOfNodes = FindObjectsOfType<BasicNode>().Count(node => !(node is ControllableNode));
+		TotalNumberOfNodes = FindObjectsOfType<BasicNode>().Count(node => !(node is ControllableNode) && !node.Activated);
 
 		VictoryScreen.SetActive(false);
 		UpdateGUI();
