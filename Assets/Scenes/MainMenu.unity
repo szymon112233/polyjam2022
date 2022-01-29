@@ -1989,7 +1989,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Bartosz Cabaj - Graphics\nBartosz Stochel - Programming\nKatsiaryna Harelik 
     - Graphics\nSiergiej Veram4uk - Programming\nAga \u015Awi\u0119tek - Graphics\nSzymon
-    Pi\xF3rkowski - Programming"
+    Pi\xF3rkowski - Programming\n\nFont used - Kids Rock DEMO"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2125,8 +2125,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: game xDDD
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dca866629f500c44399b27a0f16df86c, type: 2}
+  m_sharedMaterial: {fileID: 746225502417817290, guid: dca866629f500c44399b27a0f16df86c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
