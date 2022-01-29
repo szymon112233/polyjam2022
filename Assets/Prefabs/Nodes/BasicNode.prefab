@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f6105859b439887179055fe6664ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NodeActivatedEvent: {fileID: 11400000, guid: 1a948b5dd07544b40a7a855b101f861d, type: 2}
   OnActivated:
     m_PersistentCalls:
       m_Calls:

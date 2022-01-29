@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2383681073644be8469d7a28046c050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NodeActivatedEvent: {fileID: 11400000, guid: 1a948b5dd07544b40a7a855b101f861d, type: 2}
   OnActivated:
     m_PersistentCalls:
       m_Calls:
@@ -183,6 +184,8 @@ MonoBehaviour:
         m_CallState: 2
   Actions:
   - {fileID: 11400000, guid: 21d5e1906017f094a9f44bddd24e11e6, type: 2}
+  range: 0
+  DeleteUsedActions: 1
 --- !u!58 &2065826083094441611
 CircleCollider2D:
   m_ObjectHideFlags: 0

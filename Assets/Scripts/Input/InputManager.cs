@@ -26,6 +26,13 @@ public class InputManager : MonoBehaviour
 		ShootAction.action.canceled +=ActionOncanceled;
 	}
 
+	private void OnDestroy()
+	{
+		ShootAction.action.started -= ActionOnstarted;
+		ShootAction.action.performed -= ActionOnperformed;
+		ShootAction.action.canceled -= ActionOncanceled;
+	}
+
 	private void Update()
 	{
 		if (isMouseButtonDown)

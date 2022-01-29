@@ -17,6 +17,12 @@ public class ControllableNode : InteractiveNode
 		DuringShootInput.Action += OnDuringShootInput;
 	}
 
+	private void OnDestroy()
+	{
+		ShootInputFinished.Action -= OnShootInputFinished;
+		DuringShootInput.Action -= OnDuringShootInput;
+	}
+
 	private void OnShootInputFinished(Vector3 inputDelta)
 	{
 		LineRenderer.enabled = false;

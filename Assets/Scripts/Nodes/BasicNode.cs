@@ -1,9 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class BasicNode : MonoBehaviour
 {
+	[SerializeField]
+	private NodeEvent NodeActivatedEvent;
 	public bool Activated
 	{
 		get
@@ -12,11 +13,15 @@ public class BasicNode : MonoBehaviour
 		}
 		set
 		{
-			_Activated = value;
 
 			if (value)
 			{
-				OnActivated.Invoke();
+				if (!_Activated)
+				{
+					_Activated = value;
+					OnActivated.Invoke();
+					NodeActivatedEvent.Action?.Invoke(this);
+				}
 			}
 			else
 			{
