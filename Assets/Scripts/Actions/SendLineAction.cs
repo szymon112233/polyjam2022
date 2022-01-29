@@ -51,5 +51,7 @@ public class SendLineAction : BasicAction
 			rayObject.transform.Translate(0f, -Speed * Time.deltaTime * 0.5f, 0f, Space.Self);
 			yield return null;
 		}
+
+		Destroy(rayObject);
 	}
 }
