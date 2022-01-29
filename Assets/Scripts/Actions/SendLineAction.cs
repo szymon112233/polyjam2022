@@ -5,9 +5,6 @@ using System.Collections;
 public class SendLineAction : BasicAction
 {
 	[SerializeField]
-	private float SpeedOfRay;
-
-	[SerializeField]
 	private GameObject RayPrefab;
 
 	[SerializeField]
@@ -15,10 +12,9 @@ public class SendLineAction : BasicAction
 
 	public override void DoAction(BasicNode invokingNode, Vector3 direction)
 	{
-		var relativeDirection = direction - invokingNode.transform.position;
-		var desiredRayRotation = Vector3.Angle(Vector3.up, relativeDirection);
+		var desiredRayRotation = Vector3.Angle(Vector3.up, direction);
 
-		if (relativeDirection.x > 0)
+		if (direction.x > 0)
 		{
 			desiredRayRotation = -desiredRayRotation;
 		}
@@ -27,7 +23,7 @@ public class SendLineAction : BasicAction
 
 		if (IsAffectedByDirectionVectorLength)
 		{
-			currentRange = relativeDirection.magnitude;
+			currentRange = direction.magnitude;
 		}
 		else
 		{

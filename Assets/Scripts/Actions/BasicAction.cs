@@ -2,7 +2,10 @@
 
 public abstract class BasicAction : ScriptableObject
 {
-	public float Range;
+	[SerializeField]
+	protected float Range;
+	[SerializeField]
+	protected float SpeedOfRay;
 
 	public abstract void DoAction(BasicNode invokingNode, Vector3 direction);
 }
