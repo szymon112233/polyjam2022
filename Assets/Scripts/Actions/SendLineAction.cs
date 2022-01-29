@@ -46,9 +46,9 @@ public class SendLineAction : BasicAction
 
 		while (rayObject.transform.localScale.y < currentRange)
 		{
-			var newScale = new Vector3(rayObject.transform.localScale.x, rayObject.transform.localScale.y + SpeedOfRay * Time.deltaTime, rayObject.transform.localScale.z);
+			var newScale = new Vector3(rayObject.transform.localScale.x, rayObject.transform.localScale.y + Speed * Time.deltaTime, rayObject.transform.localScale.z);
 			rayObject.transform.localScale = newScale;
-			rayObject.transform.Translate(0f, -SpeedOfRay * Time.deltaTime * 0.5f, 0f, Space.Self);
+			rayObject.transform.Translate(0f, -Speed * Time.deltaTime * 0.5f, 0f, Space.Self);
 			yield return null;
 		}
 	}

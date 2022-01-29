@@ -5,12 +5,17 @@ public class InteractiveNode : BasicNode
 {
 	public List<BasicAction> Actions;
 
+	public float range;
+
 	[SerializeField]
 	private bool DeleteUsedActions = true;
 
 	private void Awake()
 	{
-		OnActivated.AddListener(()=> Fire(transform.localRotation.eulerAngles)); 
+		
+		Vector3 angle = transform.InverseTransformDirection(transform.up) * range;
+		
+		OnActivated.AddListener(()=> Fire(angle)); 
 	}
 
 	public void Fire(Vector3 direction)

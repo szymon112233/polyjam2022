@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1508bb45c46a3e849807426cd848a4f4, type: 3}
-  m_Name: SendLineActionFlexibleRange
+  m_Script: {fileID: 11500000, guid: c371663cb0764e61b52920478757fe0b, type: 3}
+  m_Name: CircleWavesAction
   m_EditorClassIdentifier: 
-  Range: 7
+  Range: 15
   Speed: 50
-  RayPrefab: {fileID: 3065206985230065549, guid: 93adaa9fd119bb2408b06c68c91c42e2, type: 3}
-  IsAffectedByDirectionVectorLength: 1
+  CirclePrefab: {fileID: 3065206985230065549, guid: 09ade582e4f6c6f4fa1fdf7b5757892e, type: 3}
