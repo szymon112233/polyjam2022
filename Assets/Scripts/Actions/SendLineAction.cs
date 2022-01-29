@@ -30,7 +30,7 @@ public class SendLineAction : BasicAction
 			currentRange = Range;
 		}
 
-		var rayObject = Instantiate(RayPrefab, invokingNode.transform.position, Quaternion.Euler(0f, 0f, desiredRayRotation));
+		var rayObject = Instantiate(RayPrefab, invokingNode.transform.position, Quaternion.Euler(0f, 0f, desiredRayRotation), invokingNode.transform);
 		invokingNode.StartCoroutine(RayMovementCoroutine(rayObject, currentRange));
 	}
 
