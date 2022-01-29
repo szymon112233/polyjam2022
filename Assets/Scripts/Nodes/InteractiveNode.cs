@@ -32,4 +32,9 @@ public class InteractiveNode : BasicNode
 			Actions.RemoveAt(0);
 		}
 	}
+
+	public bool HasAnyActionsLeft()
+	{
+		return Actions.Count > 0;
+	}
 }

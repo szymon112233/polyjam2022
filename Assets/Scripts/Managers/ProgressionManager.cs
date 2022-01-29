@@ -9,6 +9,10 @@ public class ProgressionManager : MonoBehaviour
 	[SerializeField]
 	private NodeEvent NodeActivatedEvent;
 	[SerializeField]
+	private GameObjectEvent LightObjectCreated;
+	[SerializeField]
+	private GameObjectEvent LightObjectDestroyed;
+	[SerializeField]
 	private List<GameObject> Levels;
 
 	[Header("UI elements")]
@@ -16,16 +20,22 @@ public class ProgressionManager : MonoBehaviour
 	private TextMeshProUGUI ScoreText;
 	[SerializeField]
 	private GameObject VictoryScreen;
+	[SerializeField]
+	private GameObject FailureScreen;
 
 	private int NumberOfCurrentlyActivatedNodes;
 	private int TotalNumberOfNodes;
 
 	private List<GameObject> LevelsLeftToPlay;
 	private GameObject CurrentlyPlayedLevel;
+	private List<ControllableNode> ControllableNodesInCurrentLevel;
+	private List<GameObject> CurrentLightObjects = new List<GameObject>();
 
 	private void Awake()
 	{
 		NodeActivatedEvent.Action += OnNodeActivated;
+		LightObjectCreated.Action += OnLightObjectCreated;
+		LightObjectDestroyed.Action += OnLightObjectDestroyed;
 
 		LevelsLeftToPlay = new List<GameObject>(Levels);
 
@@ -35,13 +45,15 @@ public class ProgressionManager : MonoBehaviour
 	private void OnDestroy()
 	{
 		NodeActivatedEvent.Action -= OnNodeActivated;
+		LightObjectCreated.Action -= OnLightObjectCreated;
+		LightObjectDestroyed.Action -= OnLightObjectDestroyed;
 	}
 
 	private void LoadNewLevel()
 	{
 		if (LevelsLeftToPlay.Count == 0)
 		{
-			SceneManager.LoadScene("MainMenu");
+			LoadMainMenu();
 			return;
 		}
 
@@ -56,6 +68,7 @@ public class ProgressionManager : MonoBehaviour
 
 		NumberOfCurrentlyActivatedNodes = 0;
 		TotalNumberOfNodes = FindObjectsOfType<BasicNode>().Count(node => !(node is ControllableNode) && !node.Activated);
+		ControllableNodesInCurrentLevel = FindObjectsOfType<ControllableNode>().ToList();
 
 		VictoryScreen.SetActive(false);
 		UpdateGUI();
@@ -81,5 +94,25 @@ public class ProgressionManager : MonoBehaviour
 	public void NextLevelButtonBehaviour()
 	{
 		LoadNewLevel();
+	}
+
+	public void LoadMainMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
+
+	private void OnLightObjectCreated(GameObject lightObject)
+	{
+		CurrentLightObjects.Add(lightObject);
+	}
+
+	private void OnLightObjectDestroyed(GameObject lightObject)
+	{
+		CurrentLightObjects.Remove(lightObject);
+
+		if (CurrentLightObjects.Count == 0 && ControllableNodesInCurrentLevel.All(node => !node.HasAnyActionsLeft()))
+		{
+			FailureScreen.SetActive(true);
+		}
 	}
 }

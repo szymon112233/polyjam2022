@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeActivatedEvent: {fileID: 11400000, guid: 1a948b5dd07544b40a7a855b101f861d, type: 2}
+  LightObjectCreated: {fileID: 11400000, guid: 010bb83e207825a42b18bbb3e327f048, type: 2}
+  LightObjectDestroyed: {fileID: 11400000, guid: 6fce31db6ab61b7448f2e48c5f6e2fc3, type: 2}
   Levels:
   - {fileID: 7359167214219554616, guid: f6137b7d1e3ffce4c941316002ea7478, type: 3}
   - {fileID: 7359167214219554616, guid: b3664de2b2062ac42993c5ac13e21a77, type: 3}
   - {fileID: 7359167214219554616, guid: c1e935e3ffd14e640bb0f7f5c39d93e1, type: 3}
   ScoreText: {fileID: 0}
   VictoryScreen: {fileID: 0}
+  FailureScreen: {fileID: 0}
