@@ -446,6 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8062207526853601623}
   - component: {fileID: 8062207526853601608}
+  - component: {fileID: 2471135882333542140}
   m_Layer: 0
   m_Name: ControllableNode
   m_TagString: Untagged
@@ -497,3 +498,21 @@ MonoBehaviour:
   ShootInputFinished: {fileID: 11400000, guid: 2dac5e3e54722b64d84533c511f02c97, type: 2}
   DuringShootInput: {fileID: 11400000, guid: 5069670c3f10c0746934629d2b0cde3b, type: 2}
   LineRenderer: {fileID: 8062207526081484773}
+--- !u!114 &2471135882333542140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8062207526853601609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25056d0ae833874d9a4588f62adc3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DuringShootInput: {fileID: 11400000, guid: 5069670c3f10c0746934629d2b0cde3b, type: 2}
+  ShootInputFinished: {fileID: 11400000, guid: 2dac5e3e54722b64d84533c511f02c97, type: 2}
+  IdleSprite: {fileID: 8062207526625380626}
+  FocusSprite: {fileID: 2609680323137325055}
+  ActionSprite: {fileID: 5266317822130337118}
+  ActionSpriteShowLength: 1
