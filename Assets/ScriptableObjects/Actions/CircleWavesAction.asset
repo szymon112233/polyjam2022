@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c371663cb0764e61b52920478757fe0b, type: 3}
   m_Name: CircleWavesAction
   m_EditorClassIdentifier: 
-  Range: 15
-  Speed: 50
+  Range: 20
+  Speed: 25
   CirclePrefab: {fileID: 3065206985230065549, guid: 09ade582e4f6c6f4fa1fdf7b5757892e, type: 3}

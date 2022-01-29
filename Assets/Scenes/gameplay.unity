@@ -697,8 +697,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeActivatedEvent: {fileID: 11400000, guid: 1a948b5dd07544b40a7a855b101f861d, type: 2}
   Levels:
-  - {fileID: 7359167214219554616, guid: 2c0d5235e3fa3b5439639c86b46c7440, type: 3}
   - {fileID: 7359167214219554616, guid: b3664de2b2062ac42993c5ac13e21a77, type: 3}
+  - {fileID: 7359167214219554616, guid: c1e935e3ffd14e640bb0f7f5c39d93e1, type: 3}
   ScoreText: {fileID: 869527889}
   VictoryScreen: {fileID: 1019390361}
 --- !u!1 &1215304041
@@ -911,13 +911,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246518324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.91, y: 7.77, z: -24.86}
+  m_LocalRotation: {x: -0.2588186, y: -0, z: -0, w: 0.965926}
+  m_LocalPosition: {x: -5.91, y: -6.6, z: -12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
 --- !u!114 &1246518328
 MonoBehaviour:
   m_ObjectHideFlags: 0
