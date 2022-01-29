@@ -75,6 +75,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2772980426679049011}
     m_Modifications:
+    - target: {fileID: 8062207526853601608, guid: 524c8c2e3e165c648823f15deccb2f30, type: 3}
+      propertyPath: DeleteUsedActions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8062207526853601609, guid: 524c8c2e3e165c648823f15deccb2f30, type: 3}
       propertyPath: m_Name
       value: ControllableNode

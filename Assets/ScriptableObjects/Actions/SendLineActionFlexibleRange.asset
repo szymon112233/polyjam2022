@@ -15,4 +15,6 @@ MonoBehaviour:
   Range: 7
   Speed: 25
   RayPrefab: {fileID: 3065206985230065549, guid: 93adaa9fd119bb2408b06c68c91c42e2, type: 3}
+  LightObjectCreated: {fileID: 11400000, guid: 010bb83e207825a42b18bbb3e327f048, type: 2}
+  LightObjectDestroyed: {fileID: 11400000, guid: 6fce31db6ab61b7448f2e48c5f6e2fc3, type: 2}
   IsAffectedByDirectionVectorLength: 1

@@ -6,6 +6,10 @@ public class SendLineAction : BasicAction
 {
 	[SerializeField]
 	private GameObject RayPrefab;
+	[SerializeField]
+	private GameObjectEvent LightObjectCreated;
+	[SerializeField]
+	private GameObjectEvent LightObjectDestroyed;
 
 	[SerializeField]
 	private bool IsAffectedByDirectionVectorLength;
@@ -32,6 +36,8 @@ public class SendLineAction : BasicAction
 
 		var rayObject = Instantiate(RayPrefab, invokingNode.transform.position, Quaternion.Euler(0f, 0f, desiredRayRotation), invokingNode.transform);
 		invokingNode.StartCoroutine(RayMovementCoroutine(rayObject, currentRange));
+
+		LightObjectCreated.Action?.Invoke(rayObject);
 	}
 
 	private IEnumerator RayMovementCoroutine(GameObject rayObject, float currentRange)
@@ -52,6 +58,7 @@ public class SendLineAction : BasicAction
 			yield return null;
 		}
 
+		LightObjectDestroyed.Action?.Invoke(rayObject);
 		Destroy(rayObject);
 	}
 }
