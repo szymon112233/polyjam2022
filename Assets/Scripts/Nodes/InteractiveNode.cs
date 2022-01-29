@@ -5,6 +5,9 @@ public class InteractiveNode : BasicNode
 {
 	public List<BasicAction> Actions;
 
+	[SerializeField]
+	private bool DeleteUsedActions = true;
+
 	private void Awake()
 	{
 		OnActivated.AddListener(()=> Fire(transform.localRotation.eulerAngles)); 
@@ -16,7 +19,12 @@ public class InteractiveNode : BasicNode
 		{
 			return;
 		}
+
 		Actions[0].DoAction(this, direction);
-		//Actions.RemoveAt(0);
+
+		if (DeleteUsedActions)
+		{
+			Actions.RemoveAt(0);
+		}
 	}
 }

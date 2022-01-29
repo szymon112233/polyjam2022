@@ -13,9 +13,6 @@ public class SendLineAction : BasicAction
 	[SerializeField]
 	private bool IsAffectedByDirectionVectorLength;
 
-	[SerializeField]
-	private float TranslationMultiplier = 1f;
-
 	public override void DoAction(BasicNode invokingNode, Vector3 direction)
 	{
 		var relativeDirection = direction - invokingNode.transform.position;
@@ -55,7 +52,7 @@ public class SendLineAction : BasicAction
 		{
 			var newScale = new Vector3(rayObject.transform.localScale.x, rayObject.transform.localScale.y + SpeedOfRay * Time.deltaTime, rayObject.transform.localScale.z);
 			rayObject.transform.localScale = newScale;
-			rayObject.transform.Translate(0f, -SpeedOfRay * Time.deltaTime * TranslationMultiplier, 0f, Space.Self);
+			rayObject.transform.Translate(0f, -SpeedOfRay * Time.deltaTime * 0.5f, 0f, Space.Self);
 			yield return null;
 		}
 	}

@@ -16,4 +16,3 @@ MonoBehaviour:
   SpeedOfRay: 7
   RayPrefab: {fileID: 3065206985230065549, guid: 93adaa9fd119bb2408b06c68c91c42e2, type: 3}
   IsAffectedByDirectionVectorLength: 1
-  TranslationMultiplier: 1
