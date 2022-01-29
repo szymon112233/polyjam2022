@@ -34,5 +34,7 @@ public class CircleWavesAction : BasicAction
 			movingObject.transform.localScale = newScale;
 			yield return null;
 		}
+
+		Destroy(movingObject);
 	}
 }
