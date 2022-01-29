@@ -1,0 +1,71 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "main",
+            "id": "916cf587-7e45-4c0e-90ba-aa1650470486",
+            "actions": [
+                {
+                    "name": "StartShooting",
+                    "type": "Button",
+                    "id": "e1be7e47-803d-41b8-9e06-a77c29f2a4fb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PointerDelta",
+                    "type": "Value",
+                    "id": "40f1e050-2284-40d1-92ab-dca3eb911c48",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6098e7c0-a17f-48fa-8c59-4a851ade201d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "main",
+                    "action": "StartShooting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a1dc79b-36ab-42f7-bfc6-6d717fdea24e",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "main",
+                    "action": "StartShooting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8188217-984c-4080-8e73-3f935c493f79",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "main",
+                    "action": "PointerDelta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "main",
+            "bindingGroup": "main",
+            "devices": []
+        }
+    ]
+}
