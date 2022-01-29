@@ -37,7 +37,7 @@ public class BasicNode : MonoBehaviour
 	{
 		if (other.CompareTag("Wave"))
 		{
-			Activated = false;
+			//Activated = false;
 		}
 	}
 
