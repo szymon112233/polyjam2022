@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RayOfLight
       objectReference: {fileID: 0}
+    - target: {fileID: 3065206985230065549, guid: 93adaa9fd119bb2408b06c68c91c42e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3065206985230065551, guid: 93adaa9fd119bb2408b06c68c91c42e2, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -579,10 +583,6 @@ PrefabInstance:
     - target: {fileID: 8062207526853601609, guid: 524c8c2e3e165c648823f15deccb2f30, type: 3}
       propertyPath: m_Name
       value: ControllableNode
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062207526853601609, guid: 524c8c2e3e165c648823f15deccb2f30, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8062207526853601623, guid: 524c8c2e3e165c648823f15deccb2f30, type: 3}
       propertyPath: m_RootOrder

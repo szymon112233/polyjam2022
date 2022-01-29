@@ -12,6 +12,6 @@ public class InteractiveNode : BasicNode
 			return;
 		}
 		Actions[0].DoAction(this, direction);
-		Actions.RemoveAt(0);
+		//Actions.RemoveAt(0);
 	}
 }
