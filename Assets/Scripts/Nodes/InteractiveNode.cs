@@ -10,9 +10,9 @@ public class InteractiveNode : BasicNode
 	[SerializeField]
 	private bool DeleteUsedActions = true;
 
-	private void Awake()
+	protected override void Awake()
 	{
-		
+		base.Awake();
 		Vector3 angle = -transform.up * range;
 		
 		OnActivated.AddListener(()=> Fire(angle)); 

@@ -38,7 +38,7 @@ public class BasicNode : MonoBehaviour
 		}
 	}
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		AudioSource = GetComponent<AudioSource>();
 	}
