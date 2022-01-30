@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class BasicNode : MonoBehaviour
 {
 	[SerializeField]
 	private NodeEvent NodeActivatedEvent;
+
+	[SerializeField]
+	private List<AudioClip> ActivationSounds;
+
+	private AudioSource AudioSource;
+
 	public bool Activated
 	{
 		get
@@ -21,6 +28,7 @@ public class BasicNode : MonoBehaviour
 					_Activated = value;
 					OnActivated.Invoke();
 					NodeActivatedEvent.Action?.Invoke(this);
+					PlayRandomActivationSound();
 				}
 			}
 			else
@@ -28,6 +36,11 @@ public class BasicNode : MonoBehaviour
 				OnDeactivated.Invoke();
 			}
 		}
+	}
+
+	private void Awake()
+	{
+		AudioSource = GetComponent<AudioSource>();
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -50,4 +63,12 @@ public class BasicNode : MonoBehaviour
 
 	public UnityEvent OnActivated;
 	public UnityEvent OnDeactivated;
+
+	private void PlayRandomActivationSound()
+	{
+		if (ActivationSounds.Count > 0)
+		{
+			AudioSource.PlayOneShot(ActivationSounds[Random.Range(0, ActivationSounds.Count)]);
+		}
+	}
 }

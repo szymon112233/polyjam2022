@@ -106,7 +106,7 @@ public class ProgressionManager : MonoBehaviour
 
 	private void UpdateGUI()
 	{
-		ScoreText.text = $"Activated nodes: {(((float)NumberOfCurrentlyActivatedNodes/ (float)TotalNumberOfNodes) * 100f).ToString("0")}%";
+		ScoreText.text = $"PARTY: {(((float)NumberOfCurrentlyActivatedNodes/ (float)TotalNumberOfNodes) * 100f).ToString("0")}%";
 	}
 
 	public void NextLevelButtonBehaviour()
