@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: DeleteUsedActions
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8062207526853601608, guid: 524c8c2e3e165c648823f15deccb2f30, type: 3}
+      propertyPath: Actions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4eab8bb5d0085ce449335d75ee26e766, type: 2}
     - target: {fileID: 8062207526853601609, guid: 524c8c2e3e165c648823f15deccb2f30, type: 3}
       propertyPath: m_Name
       value: ControllableNode
