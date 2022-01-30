@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FrameSprites:
-  - {fileID: 21300000, guid: e8c7a5b1ef9f82c49b665c81fbe423e2, type: 3}
-  - {fileID: 21300000, guid: 199ae273b668e80469918462b4bbf36b, type: 3}
+  - {fileID: 21300000, guid: a680beed31b0e5e4d899534b2f1140f7, type: 3}
+  - {fileID: 21300000, guid: f559edf511211254cbaa455e65297376, type: 3}
   FrameTime: 0.25
   maxRandomOffset: 0
 --- !u!1 &5020304921116985609
