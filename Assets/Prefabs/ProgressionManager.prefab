@@ -54,3 +54,4 @@ MonoBehaviour:
   ScoreText: {fileID: 0}
   VictoryScreen: {fileID: 0}
   FailureScreen: {fileID: 0}
+  SceenShowDelay: 2

@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
@@ -22,6 +24,8 @@ public class ProgressionManager : MonoBehaviour
 	private GameObject VictoryScreen;
 	[SerializeField]
 	private GameObject FailureScreen;
+	[SerializeField]
+	private float SceenShowDelay = 1f;
 
 	private int NumberOfCurrentlyActivatedNodes;
 	private int TotalNumberOfNodes;
@@ -31,6 +35,7 @@ public class ProgressionManager : MonoBehaviour
 	private GameObject CurrentLevelPrefab;
 	private List<ControllableNode> ControllableNodesInCurrentLevel;
 	private List<GameObject> CurrentLightObjects = new List<GameObject>();
+	private bool IsVictory;
 
 	private void Awake()
 	{
@@ -83,6 +88,7 @@ public class ProgressionManager : MonoBehaviour
 
 	private void PrepareToStartLevel()
 	{
+		IsVictory = false;
 		NumberOfCurrentlyActivatedNodes = 0;
 		TotalNumberOfNodes = FindObjectsOfType<BasicNode>().Count(node => !(node is ControllableNode) && !node.Activated);
 		ControllableNodesInCurrentLevel = FindObjectsOfType<ControllableNode>().ToList();
@@ -100,7 +106,8 @@ public class ProgressionManager : MonoBehaviour
 		if (NumberOfCurrentlyActivatedNodes >= TotalNumberOfNodes)
 		{
 			Debug.Log("Wygranko!");
-			VictoryScreen.SetActive(true);
+			IsVictory = true;
+			StartCoroutine(DoActionWithDelay(SceenShowDelay, () => VictoryScreen.SetActive(true)));
 		}
 	}
 
@@ -133,9 +140,16 @@ public class ProgressionManager : MonoBehaviour
 	{
 		CurrentLightObjects.Remove(lightObject);
 
-		if (!VictoryScreen.activeInHierarchy && CurrentLightObjects.Count == 0 && ControllableNodesInCurrentLevel.All(node => !node.HasAnyActionsLeft()))
+		if (!IsVictory && CurrentLightObjects.Count == 0 && ControllableNodesInCurrentLevel.All(node => !node.HasAnyActionsLeft()))
 		{
-			FailureScreen.SetActive(true);
+			StartCoroutine(DoActionWithDelay(SceenShowDelay, () => FailureScreen.SetActive(true)));
 		}
+	}
+
+	private IEnumerator DoActionWithDelay(float delayInSeconds, Action action)
+	{
+		yield return new WaitForSeconds(delayInSeconds);
+
+		action.Invoke();
 	}
 }
