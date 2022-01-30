@@ -1468,10 +1468,6 @@ MonoBehaviour:
     m_GlyphIndex: 70
     m_Scale: 1
   - m_ElementType: 1
-    m_Unicode: 52
-    m_GlyphIndex: 71
-    m_Scale: 1
-  - m_ElementType: 1
     m_Unicode: 53
     m_GlyphIndex: 72
     m_Scale: 1
@@ -2598,7 +2594,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.45
+    - _OutlineWidth: 0.25
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
