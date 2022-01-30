@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-	public Camera camera;
+	private Camera camera;
 	
 	public InputActionAsset InputActionAsset;
 	
@@ -37,6 +37,7 @@ public class InputManager : MonoBehaviour
 	{
 		if (isMouseButtonDown)
 		{
+			camera = Camera.main;
 			Vector2 screenPointerPos = PointerDelta.action.ReadValue<Vector2>();
 			Vector3 worldPointerPos = camera.ScreenToWorldPoint(new Vector3(screenPointerPos.x, screenPointerPos.y, -camera.transform.position.z), Camera.MonoOrStereoscopicEye.Mono);
 			
