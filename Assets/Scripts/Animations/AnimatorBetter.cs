@@ -11,10 +11,13 @@ public class AnimatorBetter : MonoBehaviour
 	private int frameIndex;
 	private float timer;
 
+	[SerializeField]
+	private float maxRandomOffset = 0.5f;
+
 	private void Awake()
 	{
 		frameIndex = 0;
-		timer = 0;
+		timer = Random.Range(0f, maxRandomOffset);
 		SpriteRenderer = GetComponent<SpriteRenderer>();
 		SpriteRenderer.sprite = FrameSprites[frameIndex];
 	}
