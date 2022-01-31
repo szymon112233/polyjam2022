@@ -1,6 +1,6 @@
 name: Build 🎮
 
-on: workflow_dispatch
+on: push
 
 env:
   UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
